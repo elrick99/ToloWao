@@ -1,2 +1,2 @@
 <?php
-echo 'Bonjo ta Mercon';
+echo 'Bonjour comment tu vas Seye';
