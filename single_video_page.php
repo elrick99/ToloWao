@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from oren.azyrusthemes.com/single_video_page.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:50:38 GMT -->
+<!-- Mirrored from oren.azyrusthemes.com/single_video_page.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:50:38 GMT -->
 <head>
 <meta charset="UTF-8">
 <title>Oren Video Template</title>
@@ -32,7 +32,7 @@
 						<a href="#" title="" class="menu">
 							<i class="icon-menu"></i>
 						</a>
-						<a href="index-2.html" title="" class="logo">
+						<a href="index-2.php" title="" class="logo">
 							<img src="images/logo.png" alt="">
 						</a>
 					</div><!--menu_logo end-->
@@ -144,8 +144,8 @@
 							<li><a href="#" title="">Pages</a>
 								<div class="mega-menu">
 									<ul>
-										<li><a href="index-2.html" title="">Homepage</a></li>
-										<li><a href="single_video_page.html" title="">Single Video Page</a></li>
+										<li><a href="index-2.php" title="">Homepage</a></li>
+										<li><a href="single_video_page.php" title="">Single Video Page</a></li>
 										<li><a href="Single_Video_Simplified_Page.html" title="">Single Video Simplified Page</a></li>
 										<li><a href="single_video_fullwidth_page.html" title="">Singel Video Full Width Page</a></li>
 										<li><a href="single_video_playlist.html" title="">Single Video Playlist Page</a></li>
@@ -852,7 +852,7 @@
 						<div class="videoo-list-ab">
 							<div class="videoo">
 								<div class="vid_thumbainl">
-									<a href="single_video_page.html" title="">
+									<a href="single_video_page.php" title="">
 										<img src="images/resources/vide1.png" alt="">
 										<span class="vid-time">10:21</span>
 										<span class="watch_later">
@@ -868,7 +868,7 @@
 							</div><!--videoo end-->
 							<div class="videoo">
 								<div class="vid_thumbainl">
-									<a href="single_video_page.html" title="">
+									<a href="single_video_page.php" title="">
 										<img src="images/resources/vide2.png" alt="">
 										<span class="vid-time">13:49</span>
 										<span class="watch_later">
@@ -884,7 +884,7 @@
 							</div><!--videoo end-->
 							<div class="videoo">
 								<div class="vid_thumbainl">
-									<a href="single_video_page.html" title="">
+									<a href="single_video_page.php" title="">
 										<img src="images/resources/vide3.png" alt="">
 										<span class="vid-time">2:54</span>
 										<span class="watch_later">
@@ -903,7 +903,7 @@
 							</div>
 							<div class="videoo">
 								<div class="vid_thumbainl">
-									<a href="single_video_page.html" title="">
+									<a href="single_video_page.php" title="">
 										<img src="images/resources/vide4.png" alt="">
 										<span class="vid-time">5:25</span>
 										<span class="watch_later">
@@ -919,7 +919,7 @@
 							</div><!--videoo end-->
 							<div class="videoo">
 								<div class="vid_thumbainl">
-									<a href="single_video_page.html" title="">
+									<a href="single_video_page.php" title="">
 										<img src="images/resources/vide5.png" alt="">
 										<span class="vid-time">4:01</span>
 										<span class="watch_later">
@@ -935,7 +935,7 @@
 							</div><!--videoo end-->
 							<div class="videoo">
 								<div class="vid_thumbainl">
-									<a href="single_video_page.html" title="">
+									<a href="single_video_page.php" title="">
 										<img src="images/resources/vide6.png" alt="">
 										<span class="vid-time">6:20</span>
 										<span class="watch_later">
@@ -951,7 +951,7 @@
 							</div><!--videoo end-->
 							<div class="videoo">
 								<div class="vid_thumbainl">
-									<a href="single_video_page.html" title="">
+									<a href="single_video_page.php" title="">
 										<img src="images/resources/vide7.png" alt="">
 										<span class="vid-time">8:16</span>
 										<span class="watch_later">
@@ -967,7 +967,7 @@
 							</div><!--videoo end-->
 							<div class="videoo">
 								<div class="vid_thumbainl">
-									<a href="single_video_page.html" title="">
+									<a href="single_video_page.php" title="">
 										<img src="images/resources/vide8.png" alt="">
 										<span class="vid-time">29:32</span>
 										<span class="watch_later">
@@ -1018,5 +1018,5 @@
 
 </body>
 
-<!-- Mirrored from oren.azyrusthemes.com/single_video_page.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:51:14 GMT -->
+<!-- Mirrored from oren.azyrusthemes.com/single_video_page.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:51:14 GMT -->
 </html>
