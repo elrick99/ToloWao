@@ -222,41 +222,7 @@
 						<a href="#" title="">Dr Disrespect</a>
 						<small>3</small>
 					</li>
-					<li>
-						<span class="usr_name">
-							<img src="images/resources/th2.png" alt="">
-						</span>
-						<a href="#" title="">ASMR</a>
-						<small>6</small>
-					</li>
-					<li>
-						<span class="usr_name">
-							<img src="images/resources/th3.png" alt="">
-						</span>
-						<a href="#" title="">Rivvrs</a>
-						<small>2</small>
-					</li>
-					<li>
-						<span class="usr_name">
-							<img src="images/resources/th4.png" alt="">
-						</span>
-						<a href="#" title="">The Verge</a>
-						<small>11</small>
-					</li>
-					<li>
-						<span class="usr_name">
-							<img src="images/resources/th5.png" alt="">
-						</span>
-						<a href="#" title="">Seeker</a>
-						<small>3</small>
-					</li>
-					<li>
-						<span class="usr_name">
-							<img src="images/resources/sn.png" alt="">
-						</span>
-						<a href="#" title="">Music</a>
-						<small>20</small>
-					</li>
+				
 				</ul>
 				<a href="#" title="" class="more-ch"><i class="icon-arrow_below"></i> Show 14 more</a>
 			</div><!--sd_menu end-->
