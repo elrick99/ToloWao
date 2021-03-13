@@ -1,7 +1,8 @@
+<?php  session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from oren.azyrusthemes.com/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:55:11 GMT -->
+<!-- Mirrored from oren.azyrusthemes.com/signup.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:55:11 GMT -->
 <head>
 <meta charset="UTF-8">
 <title>Oren Video Template</title>
@@ -18,6 +19,8 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/responsive.css">
 <link rel="stylesheet" type="text/css" href="css/color.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/signin.js"></script>
 </head>
 <body>
 
@@ -317,7 +320,8 @@
 		 		<span>Creez votre compte ToloWao</span>
 		 	</div><!--hd-lg end-->
 			<div class="user-account-pr">
-				<form id="form_sign">
+				<form  action="" id="form_sign" >
+                    <div id="resultat_insertion"></div>
 					<div class="input-sec mgb25">
 						<input type="text" name="pseudo" id="pseudo" placeholder="Pseudo" autocomplete="off">
 						<label>Veuillez a ne pas depasser plus de 12 caracteres</label>
@@ -338,14 +342,14 @@
 						<ul>
 							<li>
 								<label>
-									<input type="radio" name="gender" id="gender" value="Homme">
+									<input type="radio" name="gender" id="gender" value="H">
 									<b class="checkmark"> </b>
 									<span>Homme</span>
 								</label>		
 							</li>
 							<li>
 								<label>
-									<input type="radio" name="gender" value="Femme">
+									<input type="radio" name="gender" value="F">
 									<b class="checkmark"> </b>
 									<span>Femme</span>
 								</label>		
@@ -401,5 +405,5 @@
 
 </body>
 
-<!-- Mirrored from oren.azyrusthemes.com/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:55:12 GMT -->
+<!-- Mirrored from oren.azyrusthemes.com/signup.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:55:12 GMT -->
 </html>

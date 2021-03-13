@@ -21,14 +21,13 @@ class VIDEOS extends  BDD
         $json = $a->fetch();
         return $json;
     }
-    public function Ajouter_commentaire($comment_id, $libelle, $video_id, $user_id)
+    public function Ajouter_commentaire($libelle, $video_id, $user_id)
     {
 
-        $query = "INSERT INTO commentaire(comment_id, video_id, libelle,date_reg, user_reg)
-        VALUES(:comment_id, :video_id, :c_libelle,:date_reg, :user_reg)";
+        $query = "INSERT INTO commentaire( video_id, libelle,date_reg, user_reg)
+        VALUES( :video_id, :c_libelle,:date_reg, :user_reg)";
         $a = $this->bdd->prepare($query);
         $a->execute(array(
-            'comment_id' => 1,
             'c_libelle' => $libelle,
             'video_id' => $video_id,
             'user_reg' => 1,
@@ -41,7 +40,6 @@ class VIDEOS extends  BDD
             'success' => true,
             'date' => date('d/m/Y', time()),
             'heure' => date('H:i:s', time()),
-            'code_prod' => $comment_id,
             'c_libelle' => $libelle,
             'user_id' => $user_id,
             'messages' => $messages,
