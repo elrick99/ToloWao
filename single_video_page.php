@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+require_once 'Classes/CHANNEL.php';
+require_once 'Classes/VIDEOS.php';
 
+$Channel = new CHANNEL();
+$Videos = new VIDEOS();
+$chaines = $Channel->lister(1);
+$video = $Videos->trouver_video($_GET['code']);
+?>
 <!-- Mirrored from oren.azyrusthemes.com/single_video_page.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:50:38 GMT -->
 <head>
 <meta charset="UTF-8">
@@ -8,6 +16,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="" />
 <meta name="keywords" content="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/video.js"></script>
 <link rel="icon" href="images/Favicon.png">
 <link rel="stylesheet" type="text/css" href="css/animate.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -45,9 +55,6 @@
 						</form>
 					</div><!--search_form end-->
 					<ul class="controls-lv">
-						<li>
-							<a href="#" title=""><i class="icon-message"></i></a>
-						</li>
 						<li>
 							<a href="#" title=""><i class="icon-notification"></i></a>
 						</li>
@@ -139,95 +146,7 @@
 		<div class="btm_bar">
 			<div class="container">
 				<div class="btm_bar_content">
-					<nav>
-						<ul>
-							<li><a href="#" title="">Pages</a>
-								<div class="mega-menu">
-									<ul>
-										<li><a href="index-2.php" title="">Homepage</a></li>
-										<li><a href="single_video_page.php" title="">Single Video Page</a></li>
-										<li><a href="Single_Video_Simplified_Page.html" title="">Single Video Simplified Page</a></li>
-										<li><a href="single_video_fullwidth_page.html" title="">Singel Video Full Width Page</a></li>
-										<li><a href="single_video_playlist.html" title="">Single Video Playlist Page</a></li>
-										<li><a href="Upload_Video.html" title="">Upload Video Page</a></li>
-										<li><a href="Upload_Edit.html" title="">Upload Video Edit Page</a></li>
-										<li><a href="Browse_Channels.html" title="">Browse channels page</a></li>
-										<li><a href="Searched_Videos_Page.html" title="">Searched videos page</a></li>
-									</ul>
-									<ul>
-										<li><a href="#" title="">Single channel <span class="icon-arrow_below"></span></a>
-											<ul>
-												<li><a href="Single_Channel_Home.html" title="">Single Channel Home page</a></li>
-												<li><a href="Single_Channel_Videos.html" title="">Single Channel videos page</a></li>
-												<li><a href="Single_Channel_Playlist.html" title="">single channel playlist page</a></li>
-												<li><a href="Single_Channel_Channels.html" title="">single channel channels page</a></li>
-												<li><a href="Single_Channel_About.html" title="">single channel about page</a></li>
-												<li><a href="Single_Channel_Products.html" title="">single channel products page</a></li>	
-											</ul>
-										</li>
-										<li><a href="History_Page.html" title="">History page</a></li>
-										<li><a href="Browse_Categories.html" title="">Browse Categories Page</a></li>
-										<li><a href="Updates_From_Subs.html" title="">Updates from subscription page</a></li>
-										<li><a href="login.html" title="">login page</a></li>
-										<li><a href="signup.html" title="">signup page</a></li>
-										<li><a href="User_Account_Page.html" title="">User account page</a></li>
-									</ul>
-								</div>
-								<div class="clearfix"></div>
-							</li>
-							<li><a href="Browse_Categories.html" title="">Categories</a></li>
-							<li><a href="Browse_Channels.html" title="">Channels</a></li>
-							<li><a href="#" title="">Trending</a></li>
-							<li><a href="Single_Channel_Home.html" title="">LIVE</a></li>
-							<li><a href="#" title="">Movies</a></li>
-						</ul>
-					</nav><!--navigation end-->
-					<ul class="shr_links">
-						<li>
-							<h3>Go to : </h3>
-						</li>
-						<li>
-							<button data-toggle="tooltip" data-placement="top" title="Like">
-							  <i class="icon-like"></i>
-							</button>
-						</li>
-						<li>
-							<button data-toggle="tooltip" data-placement="top" title="Watch later">
-							  <i class="icon-watch_later"></i>
-							</button>
-						</li>
-						<li>
-							<button data-toggle="tooltip" data-placement="top" title="Playlist">
-							  <i class="icon-playlist"></i>
-							</button>
-						</li>
-						<li>
-							<button data-toggle="tooltip" data-placement="top" title="Purchased">
-							  <i class="icon-purchased"></i>
-							</button>
-						</li>
-						<li>
-							<button data-toggle="tooltip" data-placement="top" title="History">
-							  <i class="icon-history"></i>
-							</button>
-						</li>
-					</ul><!--shr_links end-->
-					<ul class="vid_thums">
-						<li>
-							<a class="active" href="#" title=""><i class="icon-grid"></i></a>
-						</li>
-						<li>
-							<a href="#" title="">
-								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-									 viewBox="0 0 108 108" xml:space="preserve">
-									<rect width="63" height="45"/>
-									<rect x="81" width="27" height="45"/>
-									<rect x="45" y="63" width="63" height="45"/>
-									<rect y="63" width="27" height="45"/>
-								</svg>
-							</a>
-						</li>
-					</ul><!--vid_status end-->
+
 					<div class="clearfix"></div>
 				</div><!--btm_bar_content end-->
 			</div>
@@ -415,7 +334,7 @@
 								    preload="auto"
 								    width="640"
 								    height="264"
-								    poster="images/resources/poster-img.jpg"
+								    poster="images/resources/<?= $video['miniature'] ?>"
 								    data-setup="{}"
 								  >
 								    <source src="demo_video.mp4" type="video/mp4" />
@@ -423,7 +342,7 @@
 								</video>
 							</div><!--vid-pr end-->
 							<div class="vid-info">
-								<h3>Kingdom Come: Deliverance Funny Moments and Fails Compilation</h3>
+								<h3><?= $video['titre'] ?></h3>
 								<div class="info-pr">
 									<span>60,723,169 views</span>
 									<ul class="pr_links">
@@ -456,151 +375,67 @@
 									</div>
 								</div><!--vcp_inf end-->							
 								<ul class="chan_cantrz">
-									<li>
-										<a href="#" title="" class="donate">Donate</a>
-									</li>
+
 									<li>
 										<a href="#" title="" class="subscribe">Subscribe <strong>13M</strong></a>
 									</li>
 								</ul><!--chan_cantrz end-->
 								<ul class="df-list">
-									<li>
-										<button data-toggle="tooltip" data-placement="top" title="Add to playlist">
-											<i class="icon-add_to_playlist"></i>
-										</button>
-									</li>
+
 									<li>
 										<button data-toggle="tooltip" data-placement="top" title="Favorite">
 											<i class="icon-like"></i>
 										</button>
 									</li>
-									<li>
-										<button data-toggle="tooltip" data-placement="top" title="Watch Later">
-											<i class="icon-watch_later"></i>
-										</button>
-									</li>
+
 									<li>
 										<button data-toggle="tooltip" data-placement="top" title="Share">
 											<i class="icon-share"></i>
 										</button>
 									</li>
-									<li>
-										<button data-toggle="tooltip" data-placement="top" title="Report Video">
-											<i class="icon-flag"></i>
-										</button>
-									</li>
+
 								</ul><!--df-list end-->
 								<div class="clearfix"></div>
 							</div>
 							<div class="clearfix"></div>
-							<div class="about-ch-sec">
-								<div class="abt-rw">
-									<h4>Cast:</h4>
-									<ul>
-										<li><span>Nathan Drake</span></li>
-										<li><span>Victor Sullivan </span></li>
-										<li><span>Sam Drake </span></li>
-										<li><span>Elena Fisher</span></li>
-									</ul>
-								</div>
-								<div class="abt-rw">
-									<h4>Category : </h4>
-									<ul>
-										<li><span>Gaming</span></li>
-										<li><span>PS4 Exclusive  </span></li>
-										<li><span>Gameplay  </span></li>
-										<li><span>1080p</span></li>
-									</ul>
-								</div>
-								<div class="abt-rw">
-									<h4>About : </h4>
-									<p> Three years after the events of Uncharted 3: Drake's Deception, Nathan Drake, now retired as a fortune hunter, has settled into a normal life with his wife Elena Fisher. His world is then turned upside down when his older brother Sam, long believed to be dead, suddenly reappears seeking Drake's help. </p>
-								</div>
-								<div class="abt-rw tgs">
-									<h4>Tags : </h4>
-									<ul>
-										<li><a href="#" title="">#Kingdom</a></li>
-										<li><a href="#" title="">#ImStillHereBecause </a></li>
-										<li><a href="#" title="">#denim</a></li>
-										<li><a href="#" title="">#tshirt</a></li>
-									</ul>
-								</div>
-							</div><!--about-ch-sec end-->
+                            <!--	<div class="about-ch-sec">
+                                    <div class="abt-rw">
+                                        <h4>Cast:</h4>
+                                        <ul>
+                                            <li><span>Nathan Drake</span></li>
+                                            <li><span>Victor Sullivan </span></li>
+                                            <li><span>Sam Drake </span></li>
+                                            <li><span>Elena Fisher</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="abt-rw">
+                                        <h4>Category : </h4>
+                                        <ul>
+                                            <li><span>Gaming</span></li>
+                                            <li><span>PS4 Exclusive  </span></li>
+                                            <li><span>Gameplay  </span></li>
+                                            <li><span>1080p</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="abt-rw">
+                                        <h4>About : </h4>
+                                        <p> Three years after the events of Uncharted 3: Drake's Deception, Nathan Drake, now retired as a fortune hunter, has settled into a normal life with his wife Elena Fisher. His world is then turned upside down when his older brother Sam, long believed to be dead, suddenly reappears seeking Drake's help. </p>
+                                    </div>
+                                    <div class="abt-rw tgs">
+                                        <h4>Tags : </h4>
+                                        <ul>
+                                            <li><a href="#" title="">#Kingdom</a></li>
+                                            <li><a href="#" title="">#ImStillHereBecause </a></li>
+                                            <li><a href="#" title="">#denim</a></li>
+                                            <li><a href="#" title="">#tshirt</a></li>
+                                        </ul>
+                                    </div>
+                                </div>-->
 						</div><!--abt-mk end-->
-						<div class="amazon">
-							<div class="abt-amz">
-								<div class="amz-hd">
-									<h2>Products used in this video </h2>
-									<h3>Use CODE:<span> ScereBro26</span> 10% Discount</h3>
-								</div><!--amz-hd end-->
-								<div class="amz-lg">
-									<img src="images/resources/cp-logo.png" alt="">
-								</div><!--amz-lg end-->
-								<div class="clearfix"></div>
-							</div><!--abt-amz end-->
-							<div class="amz-img-inf">
-								<div class="row">
-									<div class="col-lg-3 col-md-3 col-sm-6 col-6 full_wdth">
-										<div class="mg-inf">
-											<div class="img-sr">
-												<a href="#" title="">
-													<img src="images/resources/pro1.png" alt="">
-												</a>
-											</div>
-											<div class="info-sr">
-												<h3><a href="#" title="">HEMOON Men’s casual sportswear..</a></h3>
-												<span>$32.99</span>
-											</div>
-										</div><!--mg-inf end-->
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-6 col-6 full_wdth">
-										<div class="mg-inf">
-											<div class="img-sr">
-												<a href="#" title="">
-													<img src="images/resources/pro2.png" alt="">
-												</a>
-											</div>
-											<div class="info-sr">
-												<h3><a href="#" title=""> Men's Insulated Front-Zip Jacket </a></h3>
-												<span class="pr-d">$34.90</span>
-											</div>
-										</div><!--mg-inf end-->
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-6 col-6 full_wdth">
-										<div class="mg-inf">
-											<div class="img-sr">
-												<a href="#" title="">
-													<img src="images/resources/pro3.png" alt="">
-												</a>
-											</div>
-											<div class="info-sr">
-												<h3> <a href="#" title="">Dickies Men's Sanded Duck Jacket </a></h3>
-												<span class="pr-d">$17.49</span>
-											</div>
-										</div><!--mg-inf end-->
-									</div>
-									<div class="col-lg-3 col-md-3 col-sm-6 col-6 full_wdth">
-										<div class="mg-inf">
-											<div class="img-sr">
-												<a href="#" title="">
-													<img src="images/resources/pro4.png" alt="">
-												</a>
-											</div>
-											<div class="info-sr">
-												<h3> <a href="#" title="">Men's Big-Tall Lined Eisenhower Jacket </a></h3>
-												<span class="pr-d">$39.00</span>
-											</div>
-										</div><!--mg-inf end-->
-									</div>
-								</div>
-							</div><!--amz-img-in-->
-						</div><!--amazon end-->
+
 						<div class="cmt-bx">
 							<ul class="cmt-pr">
 								<li><span>18,386</span> Comments</li>
-								<li>
-									<span><i class="icon-sort_by"></i><a href="#" title="">Sort By</a></span>
-								</li>
 							</ul>
 							<div class="clearfix"></div>
 							<div class="clearfix"></div>
@@ -608,8 +443,10 @@
 								<div class="vc_hd">
 									<img src="images/resources/th1.png" alt="">
 								</div>
-								<form>
-									<input type="text" placeholder="Add a public comment">
+								<form class="form_comment" method="post" action="" id="form_comment">
+									<input type="text" placeholder="Add a public comment" id="commentaire">
+									<input type="hidden" placeholder="Add a public comment" id="user_id">
+									<input type="hidden" placeholder="Add a public comment" id="video_id">
 									<button type="submit">Comment</button>
 								</form>
 								<div class="clearfix"></div>
@@ -839,14 +676,8 @@
 				<div class="col-lg-3">
 					<div class="sidebar">
 						<div class="vidz-prt">
-							<h2 class="sm-vidz">Similar Videos</h2>
-							<h3 class="aut-vid">
-								<span>Autoplay </span>
-								<label class="switch">
-									<input type="checkbox">
-								  	<b class="slider round"></b>
-								</label> 
-							</h3>
+							<h2 class="sm-vidz">Suggestion</h2>
+
 							<div class="clearfix"></div>
 						</div><!--vidz-prt end-->
 						<div class="videoo-list-ab">
@@ -858,7 +689,7 @@
 										<span class="watch_later">
 											<i class="icon-watch_later_fill"></i>
 										</span>
-									</a>	
+									</a>
 								</div><!--vid_thumbnail end-->
 								<div class="video_info">
 									<h3><a href="#" title="">Kingdom Come: Deliverance Funny Moments and Fails</a></h3>
@@ -981,7 +812,7 @@
 									<span>686K views .<small class="posted_dt">1 week ago</small></span>
 								</div>
 							</div><!--videoo end-->
-						</div><!--videoo-list-ab end-->
+						</div>-->
 					</div><!--side-bar end-->
 				</div>
 			</div>
