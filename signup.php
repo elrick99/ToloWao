@@ -129,7 +129,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="Upload_Video.html" title="" class="btn-default">Upload</a>
+							<a href="Upload_Video.html" title="" class="btn-default"><i class="icon-plus"></i></a>
 						</li>
 					</ul><!--controls-lv end-->
 					<div class="clearfix"></div>
@@ -317,28 +317,28 @@
 		 		<span>Creez votre compte ToloWao</span>
 		 	</div><!--hd-lg end-->
 			<div class="user-account-pr">
-				<form>
+				<form id="form_sign">
 					<div class="input-sec mgb25">
-						<input type="text" name="pseudo" placeholder="Pseudo">
+						<input type="text" name="pseudo" id="pseudo" placeholder="Pseudo" autocomplete="off">
 						<label>Veuillez a ne pas depasser plus de 12 caracteres</label>
 					</div>
 					<div class="input-sec">
-						<input type="email" name="email" placeholder="Votre email">
+						<input type="email" name="email"  id="email" placeholder="Votre email" autocomplete="off">
 					</div>
 					<div class="input-sec">
-						<input type="Password" name="password" placeholder="Mot de passe">
+						<input type="Password" name="password" id="password" placeholder="Mot de passe" autocomplete="off">
 					</div>
 					<div class="input-sec">
-						<input type="password" name="confirm-password" placeholder="Confirmez Mot de passe">
+						<input type="password" name="confirm-password" id="password2" placeholder="Confirmez Mot de passe" autocomplete="off">
 					</div>
 					<div class="input-sec flatpickr">
-						<input type="text" name="confirm-password" placeholder="Votre Age">
+						<input type="text" name="age"  id="age" placeholder="Votre Age" autocomplete="off">
 					</div>
 					<div class="chekbox-lg">
 						<ul>
 							<li>
 								<label>
-									<input type="radio" name="gender" value="Homme">
+									<input type="radio" name="gender" id="gender" value="Homme">
 									<b class="checkmark"> </b>
 									<span>Homme</span>
 								</label>		
