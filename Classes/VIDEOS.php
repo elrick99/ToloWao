@@ -28,10 +28,10 @@ class VIDEOS extends  BDD
         VALUES(:comment_id, :video_id, :c_libelle,:date_reg, :user_reg)";
         $a = $this->bdd->prepare($query);
         $a->execute(array(
-            'comment_id' => $comment_id,
+            'comment_id' => 1,
             'c_libelle' => $libelle,
             'video_id' => $video_id,
-            'user_id' => $user_id,
+            'user_reg' => 1,
             'date_reg' => date('Y-m-d H:i:s',time()),
 
         )) or die("Erreur d'insertion du nouveaux produit.");
@@ -48,6 +48,21 @@ class VIDEOS extends  BDD
 
 
         );
+        return $json;
+    }
+    public function lister_commentaire($code)
+    {
+        $query = "
+        SELECT * FROM 
+            commentaire   
+            WHERE
+            video_id LIKE ?
+            ORDER BY  date_reg DESC
+        ";
+
+        $a = $this->bdd->prepare($query);
+        $a->execute(array($code));
+        $json = $a->fetchAll();
         return $json;
     }
 }

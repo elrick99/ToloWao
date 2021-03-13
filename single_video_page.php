@@ -8,6 +8,7 @@ $Channel = new CHANNEL();
 $Videos = new VIDEOS();
 $chaines = $Channel->lister(1);
 $video = $Videos->trouver_video($_GET['code']);
+$commentaire = $Videos->lister_commentaire($_GET['code']);
 ?>
 <!-- Mirrored from oren.azyrusthemes.com/single_video_page.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:50:38 GMT -->
 <head>
@@ -43,7 +44,7 @@ $video = $Videos->trouver_video($_GET['code']);
 							<i class="icon-menu"></i>
 						</a>
 						<a href="index-2.php" title="" class="logo">
-							<img src="images/logo.png" alt="">
+							<img src="images/ft-logo.png" alt="">
 						</a>
 					</div><!--menu_logo end-->
 					<div class="search_form">
@@ -382,14 +383,19 @@ $video = $Videos->trouver_video($_GET['code']);
 								</ul><!--chan_cantrz end-->
 								<ul class="df-list">
 
+                                    <li>
+                                        <button data-toggle="tooltip" data-placement="top" title="Telecharger">
+                                            <i class="icon-load"></i>
+                                        </button>
+                                    </li>
 									<li>
-										<button data-toggle="tooltip" data-placement="top" title="Favorite">
+										<button data-toggle="tooltip" data-placement="top" title="Ajouter aux favoris">
 											<i class="icon-like"></i>
 										</button>
 									</li>
 
 									<li>
-										<button data-toggle="tooltip" data-placement="top" title="Share">
+										<button data-toggle="tooltip" data-placement="top" title="Partager">
 											<i class="icon-share"></i>
 										</button>
 									</li>
@@ -439,7 +445,7 @@ $video = $Videos->trouver_video($_GET['code']);
 							</ul>
 							<div class="clearfix"></div>
 							<div class="clearfix"></div>
-							<div class="vcp_inf pc">
+							<div class="vcp_inf pc" id="comment">
                                 <div id="resultat_insertion"></div>
 								<div class="vc_hd">
 									<img src="images/resources/th1.png" alt="">
@@ -447,7 +453,7 @@ $video = $Videos->trouver_video($_GET['code']);
 								<form class="form_comment" method="post" action="" id="form_comment">
 									<input type="text" placeholder="Add a public comment" id="libelle">
 									<input type="hidden" placeholder="Add a public comment" id="user_id">
-									<input type="hidden" placeholder="Add a public comment" id="video_id">
+									<input type="hidden" placeholder="Add a public comment" id="video_id" value="<?=  $video['video_id']?>">
 									<button type="submit">Comment</button>
 								</form>
 								<div class="clearfix"></div>
@@ -459,6 +465,9 @@ $video = $Videos->trouver_video($_GET['code']);
 								</div><!--vcp_inf end-->
 							</div><!--cmt-bx end-->
 							<ul class="cmn-lst">
+                                <?php
+                                foreach ($commentaire as $comment) {
+                                ?>
 								<li>
 									<div class="vcp_inf">
 										<div class="vc_hd">
@@ -469,7 +478,7 @@ $video = $Videos->trouver_video($_GET['code']);
 												<span><i class="icon-pinned"></i>Pinned by ScereBro</span>
 											</div>
 											<h2>ScereBro <small class="posted_dt"> . 18 hours ago</small></h2>
-											<p>Where does Thor: Ragnarok rank amongst the other Thor movies? Amongst the rest of the MCU? Let us know in the comments below and tell us which other movies you'd like to see us make Honest.</p>
+											<p><?= $comment['libelle'] ?></p>
 											<ul class="cmn-i">
 												<li>
 													<a href="#" title="">
@@ -488,188 +497,7 @@ $video = $Videos->trouver_video($_GET['code']);
 										</div><!--coments end-->
 									</div><!--vcp_inf end-->
 								</li>
-								<li>
-									<div class="vcp_inf">
-										<div class="vc_hd">
-											<img src="images/resources/th3.png" alt="">
-										</div>
-										<div class="coments">
-											<h2>Doge <small class="posted_dt"> . 2 hours ago</small></h2>
-											<p>Depressive Alcoholics are my favorite superheroes </p>
-											<ul class="cmn-i">
-												<li>
-													<a href="#" title="">
-														<i class="icon-thumbs_up"></i>
-													</a>
-													<span>61</span>
-												</li>
-												<li>
-													<a href="#" title="">
-														<i class="icon-thumbs_down"></i>
-													</a>
-													<span>3</span>
-												</li>
-											</ul>
-											<a href="#" title="">View all 26 replies</a>
-										</div><!--coments end-->
-									</div><!--vcp_inf end-->
-								</li>
-								<li>
-									<div class="vcp_inf">
-										<div class="vc_hd">
-											<img src="images/resources/th4.png" alt="">
-										</div>
-										<div class="coments">
-											<h2>Juan Lacanaria <small class="posted_dt"> . 12 hours ago</small></h2>
-											<p>Can you please say "winner winner , chicken dinner" </p>
-											<ul class="cmn-i">
-												<li>
-													<a href="#" title="">
-														<i class="icon-thumbs_up"></i>
-													</a>
-													<span>22</span>
-												</li>
-												<li>
-													<a href="#" title="">
-														<i class="icon-thumbs_down"></i>
-													</a>
-													<span></span>
-												</li>
-											</ul>
-											<a href="#" title="">View all 9 replies</a>
-										</div><!--coments end-->
-									</div><!--vcp_inf end-->
-								</li>
-								<li>
-									<div class="vcp_inf">
-										<div class="vc_hd">
-											<img src="images/resources/th5.png" alt="">
-										</div>
-										<div class="coments">
-											<h2>Comander Lucky <small class="posted_dt"> . 2 weeks ago</small></h2>
-											<p>It looked like electro shuffle was most synced</p>
-											<ul class="cmn-i">
-												<li>
-													<a href="#" title="">
-														<i class="icon-thumbs_up"></i>
-													</a>
-													<span>37</span>
-												</li>
-												<li>
-													<a href="#" title="">
-														<i class="icon-thumbs_down"></i>
-													</a>
-													<span>3</span>
-												</li>
-											</ul>
-											<a href="#" title="">View all 12 replies</a>
-										</div><!--coments end-->
-									</div><!--vcp_inf end-->
-								</li>
-								<li>
-									<div class="vcp_inf">
-										<div class="vc_hd">
-											<img src="images/resources/th1.png" alt="">
-										</div>
-										<div class="coments">
-											<h2>Menji <small class="posted_dt"> . 1 week ago</small></h2>
-											<p>The floss, fresh, flapper, ride the pony were all in sync if you ask me plus if they used the original music they would be copyrighted. Plus the original music made it worst for these dances. </p>
-											<ul class="cmn-i">
-												<li>
-													<a href="#" title="">
-														<i class="icon-thumbs_up"></i>
-													</a>
-													<span>147</span>
-												</li>
-												<li>
-													<a href="#" title="">
-														<i class="icon-thumbs_down"></i>
-													</a>
-													<span>8</span>
-												</li>
-											</ul>
-											<a href="#" title="">View all 7 replies</a>
-										</div><!--coments end-->
-									</div><!--vcp_inf end-->
-								</li>
-								<li>
-									<div class="vcp_inf">
-										<div class="vc_hd">
-											<img src="images/resources/th3.png" alt="">
-										</div>
-										<div class="coments">
-											<h2>Storax Storm <small class="posted_dt"> . 11 hours ago</small></h2>
-											<p>Well Epic Games would have gotten Copyrighted if they used the original music but yea I see you</p>
-											<ul class="cmn-i">
-												<li>
-													<a href="#" title="">
-														<i class="icon-thumbs_up"></i>
-													</a>
-													<span>71</span>
-												</li>
-												<li>
-													<a href="#" title="">
-														<i class="icon-thumbs_down"></i>
-													</a>
-													<span>28</span>
-												</li>
-											</ul>
-											<a href="#" title="">View all 21 replies</a>
-										</div><!--coments end-->
-									</div><!--vcp_inf end-->
-								</li>
-								<li>
-									<div class="vcp_inf">
-										<div class="vc_hd">
-											<img src="images/resources/th2.png" alt="">
-										</div>
-										<div class="coments">
-											<h2>Nick Jacobs <small class="posted_dt"> . 6 hours ago</small></h2>
-											<p>Electro shuffle best dance hands down </p>
-											<ul class="cmn-i">
-												<li>
-													<a href="#" title="">
-														<i class="icon-thumbs_up"></i>
-													</a>
-													<span>42</span>
-												</li>
-												<li>
-													<a href="#" title="">
-														<i class="icon-thumbs_down"></i>
-													</a>
-													<span></span>
-												</li>
-											</ul>
-											<a href="#" title="">View all 32 replies</a>
-										</div><!--coments end-->
-									</div><!--vcp_inf end-->
-								</li>
-								<li>
-									<div class="vcp_inf">
-										<div class="vc_hd">
-											<img src="images/resources/th4.png" alt="">
-										</div>
-										<div class="coments">
-											<h2>Jumpman30  <small class="posted_dt"> . 2 hours ago</small></h2>
-											<p>bruh okay the original fresh music is the best hands down, it looks classy. the music they put on the fresh in fort nite  makes it worse </p>
-											<ul class="cmn-i">
-												<li>
-													<a href="#" title="">
-														<i class="icon-thumbs_up"></i>
-													</a>
-													<span>48</span>
-												</li>
-												<li>
-													<a href="#" title="">
-														<i class="icon-thumbs_down"></i>
-													</a>
-													<span>2</span>
-												</li>
-											</ul>
-											<a href="#" title="">View all 3 replies</a>
-										</div><!--coments end-->
-									</div><!--vcp_inf end-->
-								</li>
+								<?php } ?>
 							</ul><!--comment list end-->
 						</div>
 					</div><!--mn-vid-sc end--->

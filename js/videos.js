@@ -6,7 +6,7 @@ jQuery(function () {
             video_id = $("#video_id").val();
 
         $.ajax({
-            url: '../Submit/Videos/commentaire.php',
+            url: 'Submit/Videos/commentaire.php',
             type: 'POST',
             data:{
                 'commentaire' : libelle,
@@ -17,19 +17,13 @@ jQuery(function () {
             success:function (data){
                 if(data['success'] == true) {
                     $("#form_comment").hide();
-                    $("#resultat_insertion").html('<div class="alert alert-primary alert-dismissible fade show" role="alert">\n' +
-                        data['message']+'  \n' +
-                        '  <button type="button" class="close" data-dismiss="alert" aria-label="Close">\n' +
-                        '    <span aria-hidden="true">&times;</span>\n' +
-                        '  </button>\n' +
-                        '</div>');
+
                     setTimeout(function () {
                         window.location.reload();
                     }, 3000);
                 }else {
                     $("#resultat_insertion").html('<div class="alert alert-primary alert-dismissible fade show" role="alert">\n' +
                         data['message']+'  \n' +
-                        '  <button type="button" class="close" data-dismiss="alert" aria-label="Close">\n' +
                         '    <span aria-hidden="true">&times;</span>\n' +
                         '  </button>\n' +
                         '</div>');

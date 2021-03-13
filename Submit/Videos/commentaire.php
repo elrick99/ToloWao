@@ -10,8 +10,8 @@ $comment_id = 1;
 $video_id = trim($_POST['video_id']);
 $libelle = trim($_POST['commentaire']);
 $user_id = trim($_POST['user_id']);
-require_once '../Classes/CHANNEL.php';
-require_once '../Classes/VIDEOS.php';
+require_once '../../Classes/CHANNEL.php';
+require_once '../../Classes/VIDEOS.php';
 
 $Videos = new VIDEOS();
 $Channel = new CHANNEL();
@@ -19,11 +19,11 @@ $Channel = new CHANNEL();
 
 
 
-                $insert = $Videos->Ajouter_commentaire(NULL,$libelle,NULL,NULL);
-                if($insert['status'] == 'success'){
+                $insert = $Videos->Ajouter_commentaire(NULL,$libelle,$video_id,NULL);
+                if($insert){
                     $json = array(
                         'success' => true,
-                        'message' => $insert['message']
+                        'message' =>'SUPER'
                     );
                 }else{
                     $json = array(
