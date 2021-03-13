@@ -17,7 +17,7 @@ $video = $Videos->trouver_video($_GET['code']);
 <meta name="description" content="" />
 <meta name="keywords" content="" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/video.js"></script>
+    <script type="text/javascript" src="js/videos.js"></script>
 <link rel="icon" href="images/Favicon.png">
 <link rel="stylesheet" type="text/css" href="css/animate.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -440,11 +440,12 @@ $video = $Videos->trouver_video($_GET['code']);
 							<div class="clearfix"></div>
 							<div class="clearfix"></div>
 							<div class="vcp_inf pc">
+                                <div id="resultat_insertion"></div>
 								<div class="vc_hd">
 									<img src="images/resources/th1.png" alt="">
 								</div>
 								<form class="form_comment" method="post" action="" id="form_comment">
-									<input type="text" placeholder="Add a public comment" id="commentaire">
+									<input type="text" placeholder="Add a public comment" id="libelle">
 									<input type="hidden" placeholder="Add a public comment" id="user_id">
 									<input type="hidden" placeholder="Add a public comment" id="video_id">
 									<button type="submit">Comment</button>

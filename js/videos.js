@@ -1,7 +1,7 @@
 jQuery(function () {
     $("#form_comment").submit(function (){
         let
-            commentaire = $("#commentaire").val(),
+            libelle = $("#libelle").val(),
             user_id = $("#user_id").val(),
             video_id = $("#video_id").val();
 
@@ -9,21 +9,23 @@ jQuery(function () {
             url: '../Submit/Videos/commentaire.php',
             type: 'POST',
             data:{
-                'code_agence' : code_agence,
-                'raison_sociale' : raison_sociale,
-                'telephone' : telephone
+                'commentaire' : libelle,
+                'video_id' : video_id,
+                'user_id' : user_id
             },
             dataType: 'json',
             success:function (data){
                 if(data['success'] == true) {
-                    $("#form_agence").hide();
+                    $("#form_comment").hide();
                     $("#resultat_insertion").html('<div class="alert alert-primary alert-dismissible fade show" role="alert">\n' +
                         data['message']+'  \n' +
                         '  <button type="button" class="close" data-dismiss="alert" aria-label="Close">\n' +
                         '    <span aria-hidden="true">&times;</span>\n' +
                         '  </button>\n' +
                         '</div>');
-                    window.location.href = "../agence/";
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 3000);
                 }else {
                     $("#resultat_insertion").html('<div class="alert alert-primary alert-dismissible fade show" role="alert">\n' +
                         data['message']+'  \n' +

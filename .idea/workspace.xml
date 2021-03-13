@@ -21,34 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f9c5035b-1071-4c58-a270-4022a0bfbdbb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Browse_Categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/Browse_Categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Browse_Channels.html" beforeDir="false" afterPath="$PROJECT_DIR$/Browse_Channels.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/BDD.php" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/BDD.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/CHANNEL.php" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CHANNEL.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/VIDEOS.php" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/VIDEOS.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/History_Page.html" beforeDir="false" afterPath="$PROJECT_DIR$/History_Page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Searched_Videos_Page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Searched_Videos_Page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Single_Channel_About.html" beforeDir="false" afterPath="$PROJECT_DIR$/Single_Channel_About.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Single_Channel_Channels.html" beforeDir="false" afterPath="$PROJECT_DIR$/Single_Channel_Channels.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Single_Channel_Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Single_Channel_Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Single_Channel_Playlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Single_Channel_Playlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Single_Channel_Products.html" beforeDir="false" afterPath="$PROJECT_DIR$/Single_Channel_Products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Single_Channel_Videos.html" beforeDir="false" afterPath="$PROJECT_DIR$/Single_Channel_Videos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Single_Video_Simplified_Page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Single_Video_Simplified_Page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Submit/Videos/commentaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/Submit/Videos/commentaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Updates_From_Subs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Updates_From_Subs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Upload_Edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/Upload_Edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Upload_Video.html" beforeDir="false" afterPath="$PROJECT_DIR$/Upload_Video.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User_Account_Page.html" beforeDir="false" afterPath="$PROJECT_DIR$/User_Account_Page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-2.php" beforeDir="false" afterPath="$PROJECT_DIR$/index-2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/commentaire.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/commentaire.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/videos.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/videos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single_video_fullwidth_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/single_video_fullwidth_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/single_video_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/single_video_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single_video_playlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/single_video_playlist.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1615207580203</updated>
       <workItem from="1615207581297" duration="3001000" />
-      <workItem from="1615497124531" duration="13331000" />
+      <workItem from="1615497124531" duration="14703000" />
     </task>
     <servers />
   </component>
