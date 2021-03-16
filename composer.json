@@ -11,5 +11,6 @@
             "App\\": "App"
         }
     },
-    "require": {}
+    "require": {},
+    "description": ""
 }
