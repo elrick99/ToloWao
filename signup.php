@@ -365,7 +365,7 @@
 				</div>
 			</div><!--user-account end--->
 			<div class="fr-ps">
-				<h1>Vous avez deja un compte ?<a href="login.html" title="" class="show_signup"> Connectez vous.</a></h1>
+				<h1>Vous avez deja un compte ?<a href="<?= $router->url('test') ?>" title="" class="show_signup"> Connectez vous.</a></h1>
 			</div><!--fr-ps end-->
 		</div><!--login end--->
 

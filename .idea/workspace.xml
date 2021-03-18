@@ -49,8 +49,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
-    <execution />
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -62,24 +65,36 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="1pTWUt8ATylBv2EXJPVzZL6MV9Y" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../pegase" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ToloWao\App\Router" />
       <recent name="C:\wamp\www\ToloWao\Submit\Videos" />
       <recent name="C:\wamp\www\ToloWao\js" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f9c5035b-1071-4c58-a270-4022a0bfbdbb" name="Default Changelist" comment="" />
@@ -88,12 +103,19 @@
       <option name="presentableId" value="Default" />
       <updated>1615207580203</updated>
       <workItem from="1615207581297" duration="3001000" />
+<<<<<<< HEAD
       <workItem from="1615497124531" duration="33310000" />
+=======
+      <workItem from="1615497124531" duration="23544000" />
+      <workItem from="1615757656448" duration="2196000" />
+      <workItem from="1615890416591" duration="164000" />
+      <workItem from="1615890648684" duration="12974000" />
+>>>>>>> b4bddaf0df62638b8a84df895c4e2cc42dd90a8d
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -105,12 +127,26 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="240" y="280" key="#SQL_Resolution_Scopes" timestamp="1615907665473">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="240" y="280" key="#SQL_Resolution_Scopes/0.0.1600.860/1600.0.1024.728@0.0.1600.860" timestamp="1615907665473" />
+    <state x="392" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615907692922">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="392" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860/1600.0.1024.728@0.0.1600.860" timestamp="1615907692922" />
+    <state x="563" y="340" key="ComposerInitDialogKey" timestamp="1615890729051">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="563" y="340" key="ComposerInitDialogKey/0.0.1600.860/1600.0.1024.728@0.0.1600.860" timestamp="1615890729051" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1615499983739">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1615499983739" />
+<<<<<<< HEAD
     <state x="511" y="87" key="NewPhpClassDialog" timestamp="1615641061204">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -119,5 +155,20 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1615640941596" />
+=======
+    <state x="511" y="88" key="NewPhpClassDialog" timestamp="1615759733688">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="511" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1615585735402" />
+    <state x="511" y="88" key="NewPhpClassDialog/0.0.1366.738@0.0.1366.738" timestamp="1615759733688" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1615594188368">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1615594188368" />
+    <state x="508" y="149" width="583" height="562" key="find.popup" timestamp="1615891519965">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="508" y="149" width="583" height="562" key="find.popup/0.0.1600.860/1600.0.1024.728@0.0.1600.860" timestamp="1615891519965" />
+>>>>>>> b4bddaf0df62638b8a84df895c4e2cc42dd90a8d
   </component>
 </project>
