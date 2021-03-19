@@ -93,9 +93,14 @@ $video = $Videos->lister();
 											</li>
 											<li>
 												<span>
-													<i class="icon-logout"></i>
 												</span>
-												<a href="#" title="">Sign out</a>
+												<?php if (isset($_SESSION['user_id'])) { ?>
+													<i class="icon-logout"></i>
+												<a href="signup" title="">Se deconnecter</a>
+												<?php } else {?>
+													<i class="icon-login"></i>
+													<a href="login" title="">Se connecter</a>
+													<?php } ?>	
 											</li>
 										</ul>
 									</div><!--sd_menu end-->
