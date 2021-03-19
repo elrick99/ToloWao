@@ -20,7 +20,7 @@
 <link rel="stylesheet" type="text/css" href="css/responsive.css">
 <link rel="stylesheet" type="text/css" href="css/color.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/signin.js"></script>
+    <script type="text/javascript" src="js/connexion.js"></script>
 </head>
 <body>
 
@@ -357,7 +357,7 @@
 						</ul>
 					</div>
 					<div class="input-sec mb-0">
-						<button type="submit">Signup</button>
+						<button type="submit" id="btn_signup">Signup</button>
 					</div><!--input-sec end-->
 				</form>
 				<div class="form-text">

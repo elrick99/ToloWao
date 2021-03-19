@@ -6,7 +6,7 @@
  * Time: 11:52
  */
 
-$user_id = 12234 ;
+$user_id = 1223413 ;
 $pseudo = trim($_POST['pseudo']);
 $password = trim($_POST['password']);
 $email = trim($_POST['email']);
