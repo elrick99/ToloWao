@@ -62,9 +62,9 @@ jQuery(function () {
         return false;
     });
     $("#form_connexion").submit(function () {
-        let login           = $("#code_utilisateur_input").val().trim(),
-            mot_de_passe    = $("#mot_de_passe_input").val().trim();
-        if(login && mot_de_passe) {
+        let pseudo           = $("#pseudo").val().trim(),
+            password    = $("#password").val().trim();
+        if(pseudo && password) {
             $("#btn_connexion")
                 .prop('disabled',true)
                 .removeClass('btn-dark')

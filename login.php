@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from oren.azyrusthemes.com/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:55:11 GMT -->
+<!-- Mirrored from oren.azyrusthemes.com/login.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:55:11 GMT -->
 <head>
 <meta charset="UTF-8">
 <title>Oren Video Template</title>
@@ -313,7 +313,7 @@
 		 		<span>Log into your Oren account</span>
 		 	</div><!--hd-lg end-->
 			<div class="user-account-pr">
-				<form>
+				<form id="form_connexion">
 					<div class="input-sec">
 						<input type="text" name="Pseudo" id="pseudo" placeholder="pseudo">
 					</div>
@@ -373,5 +373,5 @@
 
 </body>
 
-<!-- Mirrored from oren.azyrusthemes.com/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:55:11 GMT -->
+<!-- Mirrored from oren.azyrusthemes.com/login.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:55:11 GMT -->
 </html>

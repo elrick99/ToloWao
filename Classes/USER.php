@@ -57,15 +57,15 @@ class USER extends BDD
         );
         return $json;
     }
-    public function connecter($login, $mot_de_passe)
+    public function connecter($pseudo, $mot_de_passe)
     {
-        $a = $this->bdd->prepare('SELECT u_id AS user_id, u_pseudo AS pseudo, u_email AS email, u_mot_de_passe AS mot_de_passe, s_code AS statut FROM pg_utilisateurs WHERE u_pseudo = ? OR u_email = ?');
-        $a->execute(array($login, $login));
+        $a = $this->bdd->prepare('SELECT u_id AS user_id,pseudo,  email, age, sexe FROM users WHERE pseudo = ?');
+        $a->execute(array($pseudo));
         $utilisateur = $a->fetch();
         if ($utilisateur) {
-            if (password_verify($mot_de_passe, $utilisateur['mot_de_passe'])) {
+            if (password_verify($mot_de_passe, $utilisateur['password'])) {
 
-                if ($utilisateur['statut'] == 1) {
+                if ($utilisateur['user_statut'] == 1) {
                     $commentaire = 'Connexion effectuée avec succès.';
                     $json = array(
                         'success' => true,
