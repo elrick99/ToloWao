@@ -59,11 +59,11 @@ class USER extends BDD
     }
     public function connecter($pseudo, $mot_de_passe)
     {
-        $a = $this->bdd->prepare('SELECT u_id AS user_id,pseudo,  email, age, sexe FROM users WHERE pseudo = ?');
+        $a = $this->bdd->prepare('SELECT u_id AS user_id,pseudo,  email, password, age, sexe,user_statut FROM users WHERE pseudo = ?');
         $a->execute(array($pseudo));
         $utilisateur = $a->fetch();
         if ($utilisateur) {
-            if (password_verify($mot_de_passe, $utilisateur['password'])) {
+            if ($mot_de_passe == $utilisateur['password']) {
 
                 if ($utilisateur['user_statut'] == 1) {
                     $commentaire = 'Connexion effectuée avec succès.';
@@ -72,6 +72,7 @@ class USER extends BDD
                         'date' => date('d/m/Y', time()),
                         'heure' => date('H:i:s', time()),
                         'user_id' => $utilisateur['user_id'],
+                        'pseudo' => $utilisateur['pseudo'],
                         'commentaire' => $commentaire
                     );
                 } else {
@@ -101,6 +102,28 @@ class USER extends BDD
                 'commentaire' => $commentaire
             );
         }
+        return $json;
+    }
+    public function trouver($user_id, $pseudo)
+    {
+        $query = "
+        SELECT 
+               u_id AS user_id, 
+               pseudo AS pseudo, 
+               email AS email,  
+               password AS mot_de_passe, 
+               user_statut AS statut, 
+                date_reg
+        FROM 
+             users 
+        WHERE 
+              u_id LIKE ? 
+          AND pseudo LIKE ? 
+          
+        ";
+        $a = $this->bdd->prepare($query);
+        $a->execute(array('%' . $user_id . '%', '%' . $pseudo . '%'));
+        $json = $a->fetch();
         return $json;
     }
 }

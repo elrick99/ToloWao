@@ -75,8 +75,8 @@ jQuery(function () {
                 url: 'Submit/User/connexion.php',
                 type: 'POST',
                 data: {
-                    'login': login,
-                    'mot_de_passe': mot_de_passe
+                    'pseudo': pseudo,
+                    'password': password
                 },
                 dataType: 'json',
                 success: function (data) {
@@ -91,7 +91,7 @@ jQuery(function () {
                             .addClass('alert alert-success')
                             .html(data['commentaire']);
                         setTimeout(function () {
-                            window.location.href= "";
+                            window.location.href= "index-2.php";
                         },3000);
                     }else {
                         $("#p_connexion_resultats").removeClass('alert alert-success')

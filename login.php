@@ -16,7 +16,9 @@
 <link rel="stylesheet" type="text/css" href="css/thumbs-embedded.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/responsive.css">
-<link rel="stylesheet" type="text/css" href="css/color.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/connexion.js"></script>
 </head>
 <body>
 
@@ -36,6 +38,7 @@
 						</a>
 					</div><!--menu_logo end-->
 					<div class="search_form">
+                        <div id="p_connexion_resultats"></div>
 						<form>
 							<input type="text" name="search" placeholder="Search Videos">
 							<button type="submit">
