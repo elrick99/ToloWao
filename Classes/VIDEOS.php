@@ -24,13 +24,13 @@ class VIDEOS extends  BDD
     public function Ajouter_commentaire($libelle, $video_id, $user_id)
     {
 
-        $query = "INSERT INTO commentaire( video_id, libelle,date_reg, user_reg)
+        $query = "INSERT INTO commentaire( video_id, libelle,date_reg, u_id)
         VALUES( :video_id, :c_libelle,:date_reg, :user_reg)";
         $a = $this->bdd->prepare($query);
         $a->execute(array(
             'c_libelle' => $libelle,
             'video_id' => $video_id,
-            'user_reg' => 1,
+            'user_reg' => $user_id,
             'date_reg' => date('Y-m-d H:i:s',time()),
 
         )) or die("Erreur d'insertion du nouveaux produit.");

@@ -104,7 +104,7 @@ class USER extends BDD
         }
         return $json;
     }
-    public function trouver($user_id, $pseudo)
+    public function trouver($user_id)
     {
         $query = "
         SELECT 
@@ -118,11 +118,11 @@ class USER extends BDD
              users 
         WHERE 
               u_id LIKE ? 
-          AND pseudo LIKE ? 
+        
           
         ";
         $a = $this->bdd->prepare($query);
-        $a->execute(array('%' . $user_id . '%', '%' . $pseudo . '%'));
+        $a->execute(array($user_id));
         $json = $a->fetch();
         return $json;
     }

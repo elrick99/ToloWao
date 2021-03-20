@@ -18,7 +18,7 @@ $Channel = new CHANNEL();
 
 
 
-                $insert = $Videos->Ajouter_commentaire($libelle,$video_id,NULL);
+                $insert = $Videos->Ajouter_commentaire($libelle,$video_id,$user_id);
                 if($insert){
                     $json = array(
                         'success' => true,

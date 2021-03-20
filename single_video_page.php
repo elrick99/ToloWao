@@ -452,7 +452,7 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
 								</div>
 								<form class="form_comment" method="post" action="" id="form_comment">
 									<input type="text" placeholder="Add a public comment" id="libelle">
-									<input type="hidden" placeholder="Add a public comment" id="user_id">
+									<input type="hidden" placeholder="Add a public comment" id="user_id" value="<?= $_SESSION['user_id'] ?>">
 									<input type="hidden" placeholder="Add a public comment" id="video_id" value="<?=  $video['video_id']?>">
 									<button type="submit">Comment</button>
 								</form>

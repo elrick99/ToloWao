@@ -68,14 +68,20 @@ $video = $Videos->lister();
 							</li>
 							<li class="user-log">
 								<div class="user-ac-img">
-									<img src="images/resources/user-img.png" alt="">
+                                    <p>
+                                        <?php
+                                        $profil= $Users->trouver($_SESSION['user_id']);
+                                        $nom = $profil['pseudo'];
+                                        $l= $nom[0];
+                                        echo $l; ?>
+                                    </p>
+									<img src="images/resources/user-img.png" alt="" >
 								</div>
 								<div class="account-menu">
-									<h4><?php
-                                        $profil= $Users->trouver($_SESSION['user_id'],null);
-                                        $mot= $Users['pseudo'];
-                                        $l= $mot[0];
-                                        echo $l ?><span class="usr-status">PRO</span></h4>
+
+									<h4>
+
+                                        <span class="usr-status"> <?= $nom ?></span></h4>
 									<div class="sd_menu">
 										<ul class="mm_menu">
 											<li>
