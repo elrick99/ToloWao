@@ -62,8 +62,8 @@ jQuery(function () {
         return false;
     });
     $("#form_connexion").submit(function () {
-        let pseudo           = $("#pseudo").val().trim(),
-            password    = $("#password").val().trim();
+        let pseudo           = $("#pseudo").val(),
+            password    = $("#password").val();
         if(pseudo && password) {
             $("#btn_connexion")
                 .prop('disabled',true)
