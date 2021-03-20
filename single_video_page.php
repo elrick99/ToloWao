@@ -3,8 +3,10 @@
 <?php
 require_once 'Classes/CHANNEL.php';
 require_once 'Classes/VIDEOS.php';
+require_once 'Classes/USER.php';
 
 $Channel = new CHANNEL();
+$Users = new USER();
 $Videos = new VIDEOS();
 $chaines = $Channel->lister(1);
 $video = $Videos->trouver_video($_GET['code']);
@@ -18,7 +20,7 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
 <meta name="description" content="" />
 <meta name="keywords" content="" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/videos.js"></script>
+    <script type="text/javascript" src="js/video/videos.js"></script>
 <link rel="icon" href="images/Favicon.png">
 <link rel="stylesheet" type="text/css" href="css/animate.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -348,13 +350,13 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
 									<span>60,723,169 views</span>
 									<ul class="pr_links">
 										<li>
-											<button data-toggle="tooltip" data-placement="top" title="I like this">
+											<button data-toggle="tooltip"  id="like" data-placement="top" title="I like this">
 												<i class="icon-thumbs_up_fill"></i>
 											</button>
 											<span>388K</span>
 										</li>
 										<li>
-											<button data-toggle="tooltip" data-placement="top" title="I dislike this">
+											<button data-toggle="tooltip" id="dislike" data-placement="top" title="I dislike this">
 												<i class="icon-thumbs_down_fill"></i>
 											</button>
 											<span>28K</span>
@@ -466,7 +468,9 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
 							</div><!--cmt-bx end-->
 							<ul class="cmn-lst">
                                 <?php
+                                $video= $Videos->trouver_video($_GET['code']);
                                 foreach ($commentaire as $comment) {
+                                 $user= $Users->trouver($comment['u_id']);
                                 ?>
 								<li>
 									<div class="vcp_inf">
@@ -475,9 +479,9 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
 										</div>
 										<div class="coments">
 											<div class="pinned-comment">
-												<span><i class="icon-pinned"></i>Pinned by ScereBro</span>
+												<span><i class="icon-pinned"></i><?= $user['pseudo'] ?></span>
 											</div>
-											<h2>ScereBro <small class="posted_dt"> . 18 hours ago</small></h2>
+											<h2>ScereBro <small class="posted_dt"> <?= $comment['date_reg'] ?></small></h2>
 											<p><?= $comment['libelle'] ?></p>
 											<ul class="cmn-i">
 												<li>
