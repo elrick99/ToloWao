@@ -63,4 +63,30 @@ class VIDEOS extends  BDD
         $json = $a->fetchAll();
         return $json;
     }
+    public function like($video_id, $user_id)
+    {
+
+        $query = "INSERT INTO likes( video_id,u_id,date_reg)
+        VALUES( :video_id, :user_reg,:date_reg)";
+        $a = $this->bdd->prepare($query);
+        $a->execute(array(
+            'video_id' => $video_id,
+            'user_reg' => $user_id,
+            'date_reg' => date('Y-m-d H:i:s',time()),
+
+        )) or die("Erreur d'insertion du nouveaux produit.");
+
+        $messages = 'Enregistrement d\'un nouveau produits effectué avec succès.';
+        $json = array(
+            'success' => true,
+            'date' => date('d/m/Y', time()),
+            'heure' => date('H:i:s', time()),
+            'user_id' => $user_id,
+            'messages' => $messages,
+
+
+        );
+        return $json;
+    }
+
 }

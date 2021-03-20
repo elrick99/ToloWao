@@ -350,15 +350,25 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
 									<span>60,723,169 views</span>
 									<ul class="pr_links">
 										<li>
-											<button data-toggle="tooltip"  id="like" data-placement="top" title="I like this">
+                                            <form id="like">
+                                          <input type="hidden" value="<?= $_GET['code'] ?>" id="video_id">
+                                          <input type="hidden" value="<?= $_SESSION['user_id'] ?>" id="user_id">
+
+											<button data-toggle="tooltip"  id="btn_like" data-placement="top" title="I like this">
 												<i class="icon-thumbs_up_fill"></i>
 											</button>
+                                            </form>
 											<span>388K</span>
 										</li>
 										<li>
-											<button data-toggle="tooltip" id="dislike" data-placement="top" title="I dislike this">
-												<i class="icon-thumbs_down_fill"></i>
-											</button>
+                                            <form id="dislike">
+                                                <input type="hidden" value="<?= $_GET['code'] ?>" id="video_id">
+                                                <input type="hidden" value="<?= $_SESSION['user_id'] ?>" id="user_id">
+
+                                                <button data-toggle="tooltip"  id="btn_like" data-placement="top" title="I like this">
+                                                    <i class="icon-thumbs_down_fill"></i>
+                                                </button>
+                                            </form>
 											<span>28K</span>
 										</li>
 									</ul>
