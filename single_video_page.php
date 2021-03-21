@@ -3,12 +3,17 @@
 <?php
 require_once 'Classes/CHANNEL.php';
 require_once 'Classes/VIDEOS.php';
+require_once 'Classes/USER.php';
 
 $Channel = new CHANNEL();
+$Users = new USER();
 $Videos = new VIDEOS();
 $chaines = $Channel->lister(1);
 $video = $Videos->trouver_video($_GET['code']);
 $commentaire = $Videos->lister_commentaire($_GET['code']);
+$like= $Videos->lister_like($_GET['code']);
+$dislike= $Videos->lister_dislike($_GET['code']);
+
 ?>
 <!-- Mirrored from oren.azyrusthemes.com/single_video_page.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:50:38 GMT -->
 <head>
@@ -18,7 +23,7 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
 <meta name="description" content="" />
 <meta name="keywords" content="" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/videos.js"></script>
+    <script type="text/javascript" src="js/video/videos.js"></script>
 <link rel="icon" href="images/Favicon.png">
 <link rel="stylesheet" type="text/css" href="css/animate.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -34,291 +39,8 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
 <body>
 
 <div class="wrapper">
-	
-	<header>
-		<div class="top_bar">
-			<div class="container">
-				<div class="top_header_content">
-					<div class="menu_logo">
-						<a href="#" title="" class="menu">
-							<i class="icon-menu"></i>
-						</a>
-						<a href="index-2.php" title="" class="logo">
-							<img src="images/ft-logo.png" alt="">
-						</a>
-					</div><!--menu_logo end-->
-					<div class="search_form">
-						<form>
-							<input type="text" name="search" placeholder="Search Videos">
-							<button type="submit">
-								<i class="icon-search"></i>
-							</button>
-						</form>
-					</div><!--search_form end-->
-					<ul class="controls-lv">
-						<li>
-							<a href="#" title=""><i class="icon-notification"></i></a>
-						</li>
-						<li class="user-log">
-							<div class="user-ac-img">
-								<img src="images/resources/user-img.png" alt="">
-							</div>
-							<div class="account-menu">
-								<h4>AZYRUSMAX <span class="usr-status">PRO</span></h4>
-								<div class="sd_menu">
-									<ul class="mm_menu">
-										<li>
-											<span>
-												<i class="icon-user"></i>
-											</span>
-											<a href="#" title="">My Channel</a>
-										</li>
-										<li>
-											<span>
-												<i class="icon-paid_sub"></i>
-											</span>
-											<a href="#" title="">Paid subscriptions</a>
-										</li>
-										<li>
-											<span>
-												<i class="icon-settings"></i>
-											</span>
-											<a href="#" title="">Settings</a>
-										</li>
-										<li>
-											<span>
-												<i class="icon-logout"></i>
-											</span>
-											<a href="#" title="">Sign out</a>
-										</li>
-									</ul>
-								</div><!--sd_menu end-->
-								<div class="sd_menu scnd">
-									<ul class="mm_menu">
-										<li>
-											<span>
-												<i class="icon-light"></i>
-											</span>
-											<a href="#" title="">Dark Theme</a>
-											<label class="switch">
-												<input type="checkbox">
-											  	<b class="slider round"></b>
-											</label>
-										</li>
-										<li>
-											<span>
-												<i class="icon-language"></i>
-											</span>
-											<a href="#" title="">Language</a>
-										</li>
-										<li>
-											<span>
-												<i class="icon-feedback"></i>
-											</span>
-											<a href="#" title="">Send feedback</a>
-										</li>
-										<li>
-											<span>
-												<i class="icon-location"></i>
-											</span>
-											<a href="#" title="">India</a>
-											<i class="icon-arrow_below"></i>
-										</li>
-									</ul>
-								</div><!--sd_menu end-->
-								<div class="restricted-mode">
-									<h4>Restricted Mode</h4>
-									<label class="switch">
-										<input type="checkbox" checked>
-									  	<span class="slider round"></span>
-									</label>
-									<div class="clearfix"></div>
-								</div><!--restricted-more end-->
-							</div>
-						</li>
-						<li>
-							<a href="Upload_Video.html" title="" class="btn-default">Upload</a>
-						</li>
-					</ul><!--controls-lv end-->
-					<div class="clearfix"></div>
-				</div><!--top_header_content end-->
-			</div>
-		</div><!--header_content end-->
-		<div class="btm_bar">
-			<div class="container">
-				<div class="btm_bar_content">
 
-					<div class="clearfix"></div>
-				</div><!--btm_bar_content end-->
-			</div>
-		</div><!--btm_bar end-->
-	</header><!--header end-->
-
-	<div class="side_menu">
-		<div class="form_dvv">
-			<a href="#" title="" class="login_form_show">Sign in</a>
-		</div>
-		<div class="sd_menu">
-			<ul class="mm_menu">
-				<li>
-					<span>
-						<i class="icon-home"></i>
-					</span>
-					<a href="#" title="">Home</a>
-				</li>
-				<li>
-					<span>
-						<i class="icon-fire"></i>
-					</span>
-					<a href="#" title="">Trending</a>
-				</li>
-				<li>
-					<span>
-						<i class="icon-subscriptions"></i>
-					</span>
-					<a href="#" title="">Subscriptions</a>
-				</li>
-			</ul>
-		</div><!--sd_menu end-->
-		<div class="sd_menu">
-			<h3>Library</h3>
-			<ul class="mm_menu">
-				<li>
-					<span>
-						<i class="icon-history"></i>
-					</span>
-					<a href="#" title="">History</a>
-				</li>
-				<li>
-					<span>
-						<i class="icon-watch_later"></i>
-					</span>
-					<a href="#" title="">Watch Later</a>
-				</li>
-				<li>
-					<span>
-						<i class="icon-purchased"></i>
-					</span>
-					<a href="#" title="">Purchases</a>
-				</li>
-				<li>
-					<span>
-						<i class="icon-like"></i>
-					</span>
-					<a href="#" title="">Liked Videos</a>
-				</li>
-				<li>
-					<span>
-						<i class="icon-play_list"></i>
-					</span>
-					<a href="#" title="">Playlist</a>
-				</li>
-			</ul>
-		</div><!--sd_menu end-->
-		<div class="sd_menu subs_lst">
-			<h3>Subscriptions</h3>
-			<ul class="mm_menu">
-				<li>
-					<span class="usr_name">
-						<img src="images/resources/th1.png" alt="">
-					</span>
-					<a href="#" title="">Dr Disrespect</a>
-					<small>3</small>
-				</li>
-				<li>
-					<span class="usr_name">
-						<img src="images/resources/th2.png" alt="">
-					</span>
-					<a href="#" title="">ASMR</a>
-					<small>6</small>
-				</li>
-				<li>
-					<span class="usr_name">
-						<img src="images/resources/th3.png" alt="">
-					</span>
-					<a href="#" title="">Rivvrs</a>
-					<small>2</small>
-				</li>
-				<li>
-					<span class="usr_name">
-						<img src="images/resources/th4.png" alt="">
-					</span>
-					<a href="#" title="">The Verge</a>
-					<small>11</small>
-				</li>
-				<li>
-					<span class="usr_name">
-						<img src="images/resources/th5.png" alt="">
-					</span>
-					<a href="#" title="">Seeker</a>
-					<small>3</small>
-				</li>
-				<li>
-					<span class="usr_name">
-						<img src="images/resources/sn.png" alt="">
-					</span>
-					<a href="#" title="">Music</a>
-					<small>20</small>
-				</li>
-			</ul>
-			<a href="#" title="" class="more-ch"><i class="icon-arrow_below"></i> Show 14 more</a>
-		</div><!--sd_menu end-->
-		<div class="sd_menu">
-			<ul class="mm_menu">
-				<li>
-					<span>
-						<i class="icon-settings"></i>
-					</span>
-					<a href="#" title="">Settings</a>
-				</li>
-				<li>
-					<span>
-						<i class="icon-flag"></i>
-					</span>
-					<a href="#" title="">Report history</a>
-				</li>
-				<li>
-					<span>
-						<i class="icon-logout"></i>
-					</span>
-					<a href="#" title="">Sign out</a>
-				</li>
-			</ul>
-		</div><!--sd_menu end-->
-		<div class="sd_menu m_linkz">
-			<ul class="mm_menu">
-				<li><a href="#">About</a></li>
-				<li><a href="#">Community Rules </a></li>
-				<li><a href="#">Privacy</a></li>
-				<li><a href="#">Terms</a></li>
-				<li><a href="#">Blogs</a></li>
-				<li><a href="#">Contracts </a></li>
-				<li><a href="#">Donate</a></li>
-				<li><a href="#">FAQ</a></li>
-			</ul>
-			<span>azyrusthemes</span>
-		</div><!--sd_menu end-->
-		<div class="sd_menu bb-0">
-			<ul class="social_links">
-				<li>
-					<a href="#" title="">
-						<i class="icon-facebook-official"></i>
-					</a>
-				</li>
-				<li>
-					<a href="#" title="">
-						<i class="icon-twitter"></i>
-					</a>
-				</li>
-				<li>
-					<a href="#" title="">
-						<i class="icon-instagram"></i>
-					</a>
-				</li>
-			</ul><!--social_links end-->
-		</div><!--sd_menu end-->
-		<div class="dd_menu"></div>
-	</div><!--side_menu end-->
+    <?php require_once "HEADER.php" ?><!--side_menu end-->
 
 
 	<section class="mn-sec">
@@ -348,16 +70,40 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
 									<span>60,723,169 views</span>
 									<ul class="pr_links">
 										<li>
-											<button data-toggle="tooltip" data-placement="top" title="I like this">
+                                            <form id="like">
+                                          <input type="hidden" value="<?php if (isset($_SESSION['user_id'])){ echo $_GET['code']; } ?>" id="video_id">
+                                          <input type="hidden" value="<?php if (isset($_SESSION['user_id'])){ echo $_SESSION['user_id']; } ?>" id="user_id">
+
+											<button data-toggle="tooltip"  id="btn_like" data-placement="top" title="I like this">
 												<i class="icon-thumbs_up_fill"></i>
 											</button>
-											<span>388K</span>
+                                            </form>
+											<span> <?php
+                                                $nb_like=0;
+                                                foreach ($like as $liker){
+                                                    $nb_like++;
+                                                }
+                                                echo $nb_like;
+                                                ?></span>
 										</li>
 										<li>
-											<button data-toggle="tooltip" data-placement="top" title="I dislike this">
-												<i class="icon-thumbs_down_fill"></i>
-											</button>
-											<span>28K</span>
+                                            <form id="dislike">
+                                                <input type="hidden" value="<?php if (isset($_SESSION['user_id'])){ echo $_GET['code']; } ?>" id="video_id">
+                                                <input type="hidden" value="<?php if (isset($_SESSION['user_id'])){ echo $_SESSION['user_id']; } ?>" id="user_id">
+
+                                                <button data-toggle="tooltip"  id="btn_dislike" data-placement="top" title="I like this">
+                                                    <i class="icon-thumbs_down_fill"></i>
+                                                </button>
+                                            </form>
+											<span>
+                                                <?php
+                                                $nb_dislike=0;
+                                                foreach ($dislike as $disliker){
+                                                     $nb_dislike++;
+                                                }
+                                                echo $nb_dislike;
+                                                ?>
+                                            </span>
 										</li>
 									</ul>
 									<div class="clearfix"></div>
@@ -366,19 +112,22 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
 						</div><!--vid-1 end-->
 						<div class="abt-mk">
 							<div class="info-pr-sec">
+                                <?php
+                                $user= $Users->trouver($video['u_id']);
+                                ?>
 								<div class="vcp_inf cr">
 									<div class="vc_hd">
 										<img src="images/resources/th5.png" alt="">
 									</div>
 									<div class="vc_info pr">
-										<h4><a href="#" title="">ScereBro</a></h4>
-										<span>Published on Oct 22, 2017</span>
+										<h4><a href="#" title=""><?= $user['pseudo'] ?></a></h4>
+										<span>Publiee le  <?= $video['date_reg'] ?></span>
 									</div>
 								</div><!--vcp_inf end-->							
 								<ul class="chan_cantrz">
 
 									<li>
-										<a href="#" title="" class="subscribe">Subscribe <strong>13M</strong></a>
+										<a href="#" title="" class="subscribe">S'abonner <strong>13M</strong></a>
 									</li>
 								</ul><!--chan_cantrz end-->
 								<ul class="df-list">
@@ -438,10 +187,13 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
                                     </div>
                                 </div>-->
 						</div><!--abt-mk end-->
-
+             <?php if (isset($_SESSION['user_id'])){ ?>
 						<div class="cmt-bx">
 							<ul class="cmt-pr">
-								<li><span>18,386</span> Comments</li>
+                                <?php
+                                $nb_comment= count($commentaire);
+                                ?>
+								<li><span><?= $nb_comment ?></span> Comments</li>
 							</ul>
 							<div class="clearfix"></div>
 							<div class="clearfix"></div>
@@ -452,8 +204,8 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
 								</div>
 								<form class="form_comment" method="post" action="" id="form_comment">
 									<input type="text" placeholder="Add a public comment" id="libelle">
-									<input type="hidden" placeholder="Add a public comment" id="user_id">
-									<input type="hidden" placeholder="Add a public comment" id="video_id" value="<?=  $video['video_id']?>">
+									<input type="hidden" placeholder="Add a public comment" id="user_id" value="<?php if (isset($_SESSION['user_id'])) { echo $_SESSION['user_id']; } ?>">
+									<input type="hidden" placeholder="Add a public comment" id="video_id" value="<?php if (isset($_SESSION['user_id'])) { echo $_GET['code']; } ?>">
 									<button type="submit">Comment</button>
 								</form>
 								<div class="clearfix"></div>
@@ -466,7 +218,9 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
 							</div><!--cmt-bx end-->
 							<ul class="cmn-lst">
                                 <?php
+                                $video= $Videos->trouver_video($_GET['code']);
                                 foreach ($commentaire as $comment) {
+                                 $user= $Users->trouver($comment['u_id']);
                                 ?>
 								<li>
 									<div class="vcp_inf">
@@ -475,9 +229,9 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
 										</div>
 										<div class="coments">
 											<div class="pinned-comment">
-												<span><i class="icon-pinned"></i>Pinned by ScereBro</span>
+												<span><i class="icon-pinned"></i><?= $user['pseudo'] ?></span>
 											</div>
-											<h2>ScereBro <small class="posted_dt"> . 18 hours ago</small></h2>
+											<h2>ScereBro <small class="posted_dt"> <?= $comment['date_reg'] ?></small></h2>
 											<p><?= $comment['libelle'] ?></p>
 											<ul class="cmn-i">
 												<li>
@@ -500,6 +254,13 @@ $commentaire = $Videos->lister_commentaire($_GET['code']);
 								<?php } ?>
 							</ul><!--comment list end-->
 						</div>
+                    <?php }else{  ?>
+                        <div class="cmt-bx">
+                            <p>
+                                Pour commenter veuillez vous connecter svp, cliquez <a href="login.php">ici</a>
+                            </p>
+                        </div>
+                        <?php } ?>
 					</div><!--mn-vid-sc end--->
 				</div><!---col-lg-9 end-->
 				<div class="col-lg-3">

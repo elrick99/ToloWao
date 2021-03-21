@@ -6,7 +6,6 @@
  * Time: 11:52
  */
 
-$comment_id = 1;
 $video_id = trim($_POST['video_id']);
 $libelle = trim($_POST['commentaire']);
 $user_id = trim($_POST['user_id']);
@@ -19,7 +18,7 @@ $Channel = new CHANNEL();
 
 
 
-                $insert = $Videos->Ajouter_commentaire(NULL,$libelle,$video_id,NULL);
+                $insert = $Videos->Ajouter_commentaire($libelle,$video_id,$user_id);
                 if($insert){
                     $json = array(
                         'success' => true,

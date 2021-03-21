@@ -1,6 +1,8 @@
 <?php
 require 'vendor/autoload.php';
 
+define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Views' . DIRECTORY_SEPARATOR);
+
 $router = new App\Router\Router($_GET['url']);
 
 $router->get('/', function () use ($router) {

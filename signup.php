@@ -1,7 +1,8 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from oren.azyrusthemes.com/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:55:11 GMT -->
+<!-- Mirrored from oren.azyrusthemes.com/signup.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 11:55:11 GMT -->
 
 <head>
 	<meta charset="UTF-8">
@@ -19,6 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 	<link rel="stylesheet" type="text/css" href="css/color.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/connexion.js"></script>
 </head>
 
 <body>
