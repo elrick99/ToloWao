@@ -6,8 +6,8 @@
  * Time: 11:52
  */
 
-$video_id = trim($_POST['video_id']);
 $user_id = trim($_POST['user_id']);
+$user_id2 = trim($_POST['user_id2']);
 require_once '../../Classes/CHANNEL.php';
 require_once '../../Classes/VIDEOS.php';
 require_once '../../Classes/USER.php';
@@ -19,7 +19,7 @@ $Channel = new CHANNEL();
 
 
 
-$insert = $Videos->like($video_id,$user_id);
+$insert = $Channel->subscribe($user_id,$user_id2);
 if($insert){
     $json = array(
         'success' => true,

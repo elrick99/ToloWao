@@ -36,13 +36,13 @@ jQuery(function () {
     $("#ok").submit(function (){
         let
             user_id = $("#user_id").val(),
-            video_id = $("#video_id").val()
+            user_id2 = $("#user_id2").val()
         $.ajax({
-            url: 'Submit/Videos/like_video.php',
+            url: 'Submit/Channel/subscribe.php',
             type: 'POST',
             data:{
                 'user_id' : user_id,
-                'video_id' : video_id,
+                'user_id2' : user_id2,
 
             },
             dataType: 'json',
