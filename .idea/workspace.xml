@@ -21,28 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f9c5035b-1071-4c58-a270-4022a0bfbdbb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Browse_Categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/Browse_Categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Browse_Channels.html" beforeDir="false" afterPath="$PROJECT_DIR$/Browse_Channels.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/USER.php" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/USER.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/VIDEOS.php" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/VIDEOS.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Searched_Videos_Page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Searched_Videos_Page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Single_Channel_About.html" beforeDir="false" afterPath="$PROJECT_DIR$/Single_Channel_About.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Single_Channel_Channels.html" beforeDir="false" afterPath="$PROJECT_DIR$/Single_Channel_Channels.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Single_Channel_Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Single_Channel_Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Single_Channel_Playlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Single_Channel_Playlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Single_Channel_Products.html" beforeDir="false" afterPath="$PROJECT_DIR$/Single_Channel_Products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Single_Channel_Videos.html" beforeDir="false" afterPath="$PROJECT_DIR$/Single_Channel_Videos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Single_Video_Simplified_Page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Single_Video_Simplified_Page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Submit/User/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Submit/User/signin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Submit/Videos/commentaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/Submit/Videos/commentaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Updates_From_Subs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Updates_From_Subs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Upload_Edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/Upload_Edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User_Account_Page.html" beforeDir="false" afterPath="$PROJECT_DIR$/User_Account_Page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/signin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single_video_fullwidth_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/single_video_fullwidth_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single_video_playlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/single_video_playlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,18 +83,12 @@
       <option name="presentableId" value="Default" />
       <updated>1615207580203</updated>
       <workItem from="1615207581297" duration="3001000" />
-<<<<<<< HEAD
-      <workItem from="1615497124531" duration="33310000" />
-=======
       <workItem from="1615497124531" duration="23544000" />
       <workItem from="1615757656448" duration="2196000" />
       <workItem from="1615890416591" duration="164000" />
-<<<<<<< HEAD
       <workItem from="1615890648684" duration="12974000" />
->>>>>>> b4bddaf0df62638b8a84df895c4e2cc42dd90a8d
-=======
-      <workItem from="1615890648684" duration="12992000" />
->>>>>>> c2312b8ac5b802e693292f89f8066d555ddc7c81
+      <workItem from="1616255504468" duration="525000" />
+      <workItem from="1616322720132" duration="1431000" />
     </task>
     <servers />
   </component>
@@ -150,16 +124,6 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1615499983739" />
-<<<<<<< HEAD
-    <state x="511" y="87" key="NewPhpClassDialog" timestamp="1615641061204">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="511" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1615641061204" />
-    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1615640941596">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1615640941596" />
-=======
     <state x="511" y="88" key="NewPhpClassDialog" timestamp="1615759733688">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -173,6 +137,5 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="508" y="149" width="583" height="562" key="find.popup/0.0.1600.860/1600.0.1024.728@0.0.1600.860" timestamp="1615891519965" />
->>>>>>> b4bddaf0df62638b8a84df895c4e2cc42dd90a8d
   </component>
 </project>
