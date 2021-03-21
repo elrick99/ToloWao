@@ -129,16 +129,16 @@ $dislike= $Videos->lister_dislike($_GET['code']);
 									<li>
                                         <?php
                                         $user= $Videos->trouver_video($_GET['code']);
-                                        if ($user['u_id'] != $_SESSION['user_id']){
+                                        if ( isset($_SESSION['user_id']) AND $user['u_id'] == $_SESSION['user_id']){
                                         ?>
+                                            <a href="#" title="" class="subscribe">Modifier la video</a>
 
-                                        <form class="form_comment" method="post" action="" id="ok">
-                                            <input type="hidden" value="<?= $user['u_id'] ?>" id="user_id">
-                                            <input type="hidden" value="<?php if (isset($_SESSION['user_id'])){ echo $_SESSION['user_id']; } ?>" id="user_id2">
-                                            <button type="submit">Comment</button>
-                                        </form>
                                         <?php } else{?>
-                                        <a href="#" title="" class="subscribe">Modifier la video</a>
+                                            <form class="form_comment" method="post" action="" id="ok">
+                                                <input type="hidden" value="<?= $user['u_id'] ?>" id="user_id">
+                                                <input type="hidden" value="<?php if (isset($_SESSION['user_id'])){ echo $_SESSION['user_id']; } ?>" id="user_id2">
+                                                <button type="submit">s'abonner</button>
+                                            </form>
                                         <?php } ?>
 <!--										<button type="submit"  title="" class="subscribe" id="ok">S'abonner <strong>13M</strong></button>-->
 									</li>

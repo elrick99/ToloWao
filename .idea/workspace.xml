@@ -21,6 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9f2e4747-4cf5-494b-953a-107a8b958dfd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deconnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Deconnexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HEADER.php" beforeDir="false" afterPath="$PROJECT_DIR$/HEADER.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/single_video_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/single_video_page.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

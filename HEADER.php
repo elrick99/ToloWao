@@ -1,4 +1,5 @@
 <?php
+//unset($_SESSION);
 //var_dump($_SESSION);die;
 ?>
 <header>
@@ -36,7 +37,7 @@
                                     $profil= $Users->trouver($_SESSION['user_id']);
                                     $nom = $profil['pseudo'];
                                     $l= $nom[0];
-                                    echo $l;} ?>
+                                    echo $l;} else{ echo 'r';} ?>
 
                             </p>
                             <img src="images/resources/user-img.png" alt="" >
