@@ -127,7 +127,15 @@ $dislike= $Videos->lister_dislike($_GET['code']);
 								<ul class="chan_cantrz">
 
 									<li>
-										<a href="#" title="" class="subscribe">S'abonner <strong>13M</strong></a>
+                                        <?php
+                                        $user= $Videos->trouver_video($_GET['code']);
+                                        ?>
+                                        <form class="form_comment" method="post" action="" id="ok">
+                                            <input type="hidden" value="<?= $user['u_id'] ?>" id="user_id">
+                                            <input type="hidden" value="<?php if (isset($_SESSION['user_id'])){ echo $_SESSION['user_id']; } ?>" id="user_id2">
+                                            <button type="submit">Comment</button>
+                                        </form>
+<!--										<button type="submit"  title="" class="subscribe" id="ok">S'abonner <strong>13M</strong></button>-->
 									</li>
 								</ul><!--chan_cantrz end-->
 								<ul class="df-list">
@@ -187,7 +195,7 @@ $dislike= $Videos->lister_dislike($_GET['code']);
                                     </div>
                                 </div>-->
 						</div><!--abt-mk end-->
-             <?php if (isset($_SESSION['user_id'])){ ?>
+
 						<div class="cmt-bx">
 							<ul class="cmt-pr">
                                 <?php
@@ -197,6 +205,7 @@ $dislike= $Videos->lister_dislike($_GET['code']);
 							</ul>
 							<div class="clearfix"></div>
 							<div class="clearfix"></div>
+                            <?php if (isset($_SESSION['user_id'])){ ?>
 							<div class="vcp_inf pc" id="comment">
                                 <div id="resultat_insertion"></div>
 								<div class="vc_hd">
@@ -215,7 +224,17 @@ $dislike= $Videos->lister_dislike($_GET['code']);
 									</a>
 									<div class="clearfix"></div>
 								</div><!--vcp_inf end-->
-							</div><!--cmt-bx end-->
+							</div>
+                            <?php }else{  ?>
+                            <div class="cmt-bx">
+                                <p>
+                                    Pour commenter veuillez vous connecter svp, cliquez <a href="login.php">ici</a>
+                                </p>
+                            </div>
+
+                            <?php } ?><!--cmt-bx end-->
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
 							<ul class="cmn-lst">
                                 <?php
                                 $video= $Videos->trouver_video($_GET['code']);
@@ -254,13 +273,7 @@ $dislike= $Videos->lister_dislike($_GET['code']);
 								<?php } ?>
 							</ul><!--comment list end-->
 						</div>
-                    <?php }else{  ?>
-                        <div class="cmt-bx">
-                            <p>
-                                Pour commenter veuillez vous connecter svp, cliquez <a href="login.php">ici</a>
-                            </p>
-                        </div>
-                        <?php } ?>
+
 					</div><!--mn-vid-sc end--->
 				</div><!---col-lg-9 end-->
 				<div class="col-lg-3">
@@ -429,7 +442,42 @@ $dislike= $Videos->lister_dislike($_GET['code']);
 
 </div><!--wrapper end-->
 
+<script type="text/javascript">
+    $("#ok").submit(function (){
+        let
+            libelle = $("#libelle").val(),
+            user_id = $("#user_id").val(),
+            video_id = $("#video_id").val();
 
+        $.ajax({
+            url: 'Submit/Videos/comntaire.php',
+            type: 'POST',
+            data:{
+                'commentaire' : libelle,
+                'video_id' : video_id,
+                'user_id' : user_id
+            },
+            dataType: 'json',
+            success:function (data){
+                if(data['success'] == true) {
+                    $("#form_comment").hide();
+
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 3000);
+                }else {
+                    $("#resultat_insertion").html('<div class="alert alert-primary alert-dismissible fade show" role="alert">\n' +
+                        data['message']+'  \n' +
+                        '    <span aria-hidden="true">&times;</span>\n' +
+                        '  </button>\n' +
+                        '</div>');
+                }
+            }
+        });
+
+        return false;
+    });
+</script>
 
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.js"></script>
