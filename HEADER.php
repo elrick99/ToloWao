@@ -1,3 +1,6 @@
+<?php
+//var_dump($_SESSION);die;
+?>
 <header>
     <div class="top_bar">
         <div class="container">

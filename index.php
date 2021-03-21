@@ -1,11 +1,13 @@
 <?php
 require 'vendor/autoload.php';
 
-define('VIEWS', dirname(__DIR__).DIRECTORY_SEPARATOR.'Views'.DIRECTORY_SEPARATOR);
+//define('VIEWS', dirname(__DIR__).DIRECTORY_SEPARATOR.'Views'.DIRECTORY_SEPARATOR);
 
 $router = new App\Router\Router($_GET['url']);
 
 $router->get('/', function () use ($router) { require 'index-2.php';});
+
+$router->get('/signe', function () use ($router) { require 'signup.php';});
 $router->get('/posts', 'Posts@index');
 $router->get('posts/:id-:slug', function ($id,$slug) use ($router) {echo $router->url('posts.show', ['id'=>$id, 'slug'=>$slug]);},'posts.show')->with('id', '[0-9]+')->with('slug', '([a-z\-0-9]+)');
 $router->get('posts/:id', function ($id){echo 'Afficher l\'Article'.$id;});

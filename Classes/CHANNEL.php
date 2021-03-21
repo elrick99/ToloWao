@@ -18,4 +18,5 @@ class CHANNEL extends BDD
         $json = $a->fetchAll();
         return $json;
     }
+
 }
